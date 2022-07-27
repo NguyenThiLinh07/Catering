@@ -1,0 +1,79 @@
+    @media (max-width: 992px) {
+        .navbar__links {
+            display: unset;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 40%;
+            background: rgb(229, 223, 223);
+            height: 100%;
+            z-index: 5;
+            transition: var(--smooth);
+            box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        .navbar__links.navbar__open {
+            transform: translateX(0);
+            opacity: 1;
+            transition: var(--smooth);
+        }
+        .navbar__links li {
+            list-style: none;
+            margin: 30px;
+        }
+        .navbar__link:hover {
+            background: none;
+            color: rgb(230, 108, 9);
+            transition: var(--smooth);
+        }
+        .navbar__link {
+            display: block;
+            padding: 20px;
+            font-size: 18px;
+        }
+        .navbar__icons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 80px;
+            height: 80px;
+            cursor: pointer;
+            transition: var(--smooth);
+            z-index: 6;
+        }
+        .navbar__icon {
+            position: relative;
+            width: 45px;
+            height: 6px;
+            background: var(--second-color);
+            border-radius: 5px;
+            transition: var(--smooth);
+        }
+        .navbar__icon::after,
+        .navbar__icon::before {
+            content: "";
+            width: 45px;
+            height: 6px;
+            background: var(--second-color);
+            border-radius: 5px;
+            position: absolute;
+            transition: var(--smooth);
+        }
+        .navbar__icon::before {
+            transform: translateY(-12px);
+        }
+        .navbar__icon::after {
+            transform: translateY(12px);
+        }
+        .open .navbar__icon {
+            transform: translateX(-50px);
+            background: transparent;
+        }
+        .open .navbar__icon::before {
+            transform: rotate(45deg) translate(35px, -35px);
+        }
+        .open .navbar__icon::after {
+            transform: rotate(-45deg) translate(35px, 35px);
+        }
+    }
